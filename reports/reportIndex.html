@@ -1,0 +1,34 @@
+<html><head><title></title>
+	<link rel="stylesheet" type="text/css" href="files/css/fitnesse.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="files/css/fitnesse.css" media="print"/>
+<script language="JavaScript" type="text/javascript">
+var collapsableOpenCss = "collapsable"
+var collapsableClosedCss = "hidden"
+var collapsableOpenImg = "files/images/collapsableOpen.gif"
+var collapsableClosedImg = "files/images/collapsableClosed.gif"
+function toggleCollapsable(id){
+var div = document.getElementById(id);
+var img = document.getElementById("img" + id);
+if(div.className.indexOf(collapsableClosedCss) != -1) {
+  div.className = collapsableOpenCss;
+  img.src = collapsableOpenImg;
+} else {
+  div.className = collapsableClosedCss;
+  img.src = collapsableClosedImg;
+} }
+</script>
+</head><body><table border cellspacing=0 cellpadding=3><tr><td><A HREF="/Users/localuser/shopping/reports"></A></td><td class="fail">2 right, 1 wrong, 0 ignored, 0 exceptions</td><td class="fail">16 right, 3 wrong, 0 ignored, 0 exceptions</td></tr>
+</table>
+<div class="main">
+ <div class="setup">
+  <a href="javascript:toggleCollapsable('271095226');">
+  <img src="files/images/collapsableOpen.gif" class="left" id="img271095226"/>
+  </a>
+ <i>Files:</i>
+  <div class="collapsable" id="271095226">
+<table><tr><td></td><td><A HREF="basic-purchases.html">basic-purchases</A></td><td class="pass">8 right, 0 wrong, 0 ignored, 0 exceptions</td></tr>
+<tr><td></td><td><A HREF="running-total.html">running-total</A></td><td class="pass">4 right, 0 wrong, 0 ignored, 0 exceptions</td></tr>
+<tr><td></td><td><A HREF="three-for-price-of-one.html">three-for-price-of-one</A></td><td class="fail">4 right, 3 wrong, 0 ignored, 0 exceptions</td></tr>
+</table>
+ </div></div></div>
+</body></html>
