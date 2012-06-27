@@ -8,10 +8,10 @@
     <title>Till Receipt for Basic Purchases</title>
   </head>
 
-  <body><h1>Till Receipt for Basic Purchases</h1><table border="0"
+  <body><h1>Till Receipt for Basic Purchases, with TPOT</h1><table border="0"
       cellpadding="">
       <tr>
-        <td colspan="3">Given the following products</td>
+        <td colspan="4">Given the following products</td>
       </tr>
 
       <tr>
@@ -20,6 +20,8 @@
         <td>Barcode</td>
 
         <td>Unit Price</td>
+
+        <td>TPOT</td>
       </tr>
 
       <tr>
@@ -28,6 +30,8 @@
         <td>11111111</td>
 
         <td>0.50</td>
+
+        <td>true</td>
       </tr>
 
       <tr>
@@ -36,6 +40,8 @@
         <td>22222222</td>
 
         <td>1.00</td>
+
+        <td>true</td>
       </tr>
 
       <tr>
@@ -44,6 +50,8 @@
         <td>33333333</td>
 
         <td>0.75</td>
+
+        <td>false</td>
       </tr>
     </table><table border="0">
       <tr>
@@ -101,13 +109,17 @@
       </tr>
 
       <tr class="receiptLine">
-        <td>3</td>
+          <td>3</td>
+          <td>Discount TPOT (Milk) = -0.50</td>
+      </tr>
+      <tr class="receiptLine">
+        <td>4</td>
         <td>1 Bread @ 0.75 each = 0.75</td>
       </tr>
 
       <tr class="receiptLine">
-        <td>4</td>
-        <td>Total = 2.75</td>
+        <td>5</td>
+        <td>Total = 2.25</td>
       </tr>
     </table></body>
 </html>
