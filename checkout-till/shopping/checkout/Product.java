@@ -9,11 +9,13 @@ public class Product {
 	private final String name;
 	private final String barcode;
 	private final BigDecimal unitPrice;
+    private final Boolean TPOT;
 	
-	public Product(String name, String barcode, BigDecimal unitPrice) {
+	public Product(String name, String barcode, BigDecimal unitPrice, Boolean TPOT) {
 		this.name = name;
 		this.barcode = barcode;
 		this.unitPrice = unitPrice;
+        this.TPOT = TPOT;
 	}
 
 	/**
@@ -50,4 +52,8 @@ public class Product {
 	public BigDecimal unitPrice() {
 		return unitPrice;
 	}
+
+    public Boolean isTPOT() {
+        return TPOT;
+    }
 }

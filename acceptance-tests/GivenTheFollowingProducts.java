@@ -9,6 +9,7 @@ public class GivenTheFollowingProducts extends ColumnFixture {
 	public String Name;
 	public String Barcode;
 	public BigDecimal UnitPrice;
+    public Boolean TPOT;
 	
 	@Override
 	public void doRows(Parse rows) {
@@ -21,11 +22,12 @@ public class GivenTheFollowingProducts extends ColumnFixture {
 		Name = null;
 		Barcode = null;
 		UnitPrice = null;
+        TPOT = null;
 	}
 
 	@Override
 	public void execute() throws Exception {
-		SystemUnderTest.productRange.addProduct(new Product(Name, Barcode, UnitPrice));
+		SystemUnderTest.productRange.addProduct(new Product(Name, Barcode, UnitPrice, TPOT));
 	}
 	
 	@Override
