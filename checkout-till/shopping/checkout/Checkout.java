@@ -2,6 +2,7 @@ package shopping.checkout;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 /**
@@ -13,11 +14,16 @@ public class Checkout implements BarcodeScanListener {
 	private final CustomerInformationDisplay display;
 	
 	private final LinkedHashMap<Product, Integer> scannedProducts = new LinkedHashMap<Product, Integer>();
+
+    private ArrayList<Discount> discounts = new ArrayList<Discount>(1);
 	
 	public Checkout(ProductRange productRange, LEDDisplay display, Beeper beeper, Printer printer) {
 		this.productRange = productRange;
 		this.printer = new ReceiptFormatter(printer);
 		this.display = new CustomerInformationDisplay(display, beeper);
+
+        // Add discounts
+        this.discounts.add(new DiscountTPOT());
 	}
 	
 	public void reset() {
@@ -66,6 +72,11 @@ public class Checkout implements BarcodeScanListener {
 			total = total.add(lineTotal);
 			
 			printer.printReceiptLine(product, count, lineTotal);
+
+            // Calculate discounts
+            for (Discount discount : discounts) {
+                discount.addItem(product, count);
+            }
 		}
 		
 		printer.printTotalLine(total);
